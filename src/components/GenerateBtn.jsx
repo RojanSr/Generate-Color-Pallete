@@ -37,11 +37,25 @@ const GenerateBtn = (props) => {
     }
     setPalletes(newPalletes);
   }
-  console.log(palletes);
 
   useEffect(() => {
     props.toggleColor(palletes);
   }, [palletes]);
+
+  //Generate on spacebar
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.code === "Space") {
+        createNewColorset();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
   return <Button onClick={createNewColorset}>Generate</Button>;
 };

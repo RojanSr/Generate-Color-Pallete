@@ -1,8 +1,12 @@
 import React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import { color } from "framer-motion";
 
 const PalleteCard = (props) => {
+  function copyColorCode() {
+    navigator.clipboard.writeText(props.color);
+    props.isCopied();
+  }
+
   return (
     <Flex
       bgColor={props.color ? props.color : "blackAlpha.700"}
@@ -14,6 +18,7 @@ const PalleteCard = (props) => {
       cursor="pointer"
       color="white"
       _hover={{ color: "blackAlpha.900" }}
+      onClick={copyColorCode}
     >
       <Text fontWeight="700" fontSize="1.3rem">
         {props.color ? props.color : "Click on Generate Or Hit the Spacebar"}
