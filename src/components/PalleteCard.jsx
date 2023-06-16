@@ -11,7 +11,7 @@ const PalleteCard = (props) => {
     <Flex
       bgColor={props.color ? props.color : "blackAlpha.700"}
       w="90vw"
-      h="100px"
+      h={["70px", "85px", "100px"]}
       borderRadius="16px"
       justifyContent="center"
       alignItems="center"
@@ -20,7 +20,7 @@ const PalleteCard = (props) => {
       _hover={{ color: "blackAlpha.900" }}
       onClick={copyColorCode}
     >
-      <Text fontWeight="700" fontSize="1.3rem">
+      <Text fontWeight="700" fontSize={["0.8rem", "1.3rem"]} textAlign="center">
         {props.color ? props.color : "Click on Generate Or Hit the Spacebar"}
       </Text>
     </Flex>
