@@ -11,7 +11,7 @@ const PalleteCard = (props) => {
     <Flex
       bgColor={props.color ? props.color : "blackAlpha.700"}
       w="90vw"
-      h={["70px", "85px", "100px"]}
+      h={["80px", "85px"]}
       borderRadius="16px"
       justifyContent="center"
       alignItems="center"

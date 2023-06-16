@@ -27,10 +27,10 @@ export default function App() {
   }
 
   return (
-    <Box>
+    <Box maxH="100vh" maxW="100vw" my="40px">
       <VStack my="30px">
         <Header />
-        <VStack spacing="3" my="15px">
+        <VStack spacing="3" my="30px">
           <PalleteCard color={colors[0]} isCopied={copiedAlert} />
           <PalleteCard color={colors[1]} isCopied={copiedAlert} />
           <PalleteCard color={colors[2]} isCopied={copiedAlert} />

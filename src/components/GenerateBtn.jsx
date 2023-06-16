@@ -5,7 +5,6 @@ const GenerateBtn = (props) => {
   const [palletes, setPalletes] = useState([]);
 
   function createNewColorset() {
-    console.log(0);
     const val = [
       "0",
       "1",
