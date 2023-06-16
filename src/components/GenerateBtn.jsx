@@ -5,6 +5,7 @@ const GenerateBtn = (props) => {
   const [palletes, setPalletes] = useState([]);
 
   function createNewColorset() {
+    console.log(0);
     const val = [
       "0",
       "1",
@@ -38,6 +39,7 @@ const GenerateBtn = (props) => {
     setPalletes(newPalletes);
   }
 
+  //Sending generated color val array to App.jsx
   useEffect(() => {
     props.toggleColor(palletes);
   }, [palletes]);
@@ -50,14 +52,26 @@ const GenerateBtn = (props) => {
       }
     };
 
-    window.addEventListener("keydown", handleKeyPress);
+    window.addEventListener("keypress", handleKeyPress);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyPress);
+      window.removeEventListener("keypress", handleKeyPress);
     };
   }, []);
 
-  return <Button onClick={createNewColorset}>Generate</Button>;
+  return (
+    <Button
+      bgColor="green.400"
+      _hover={{
+        bgColor: "green.300",
+        transform: "scale(1.1)",
+      }}
+      onClick={createNewColorset}
+      size={["md", "lg"]}
+    >
+      Generate
+    </Button>
+  );
 };
 
 export default GenerateBtn;
