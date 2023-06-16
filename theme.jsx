@@ -10,6 +10,12 @@ const theme = extendTheme({
       },
     },
   },
+  breakpoints: {
+    sm: "80em",
+    md: "48em",
+    lg: "62em",
+    xl: "80em",
+  },
 });
 
 export default theme;
