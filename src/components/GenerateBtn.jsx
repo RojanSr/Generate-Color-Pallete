@@ -45,16 +45,16 @@ const GenerateBtn = (props) => {
 
   //Generate on spacebar
   useEffect(() => {
-    const handleKeyPress = (event) => {
+    const handleKeyUp = (event) => {
       if (event.code === "Space") {
         createNewColorset();
       }
     };
 
-    window.addEventListener("keypress", handleKeyPress);
+    window.addEventListener("keyup", handleKeyUp);
 
     return () => {
-      window.removeEventListener("keypress", handleKeyPress);
+      window.removeEventListener("keyup", handleKeyUp);
     };
   }, []);
 
